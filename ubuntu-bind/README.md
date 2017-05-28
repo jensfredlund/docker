@@ -165,4 +165,35 @@ jf@docker01:/home/jf/docker/ubuntu-bind$ docker run -p 53:53/udp -p 53:53 --name
 28-May-2017 19:35:57.971 running
 28-May-2017 19:35:57.971 zone example.com/IN: sending notifies (serial 2017052801)
 28-May-2017 19:35:57.973 client 172.17.0.1#57812: received notify for zone 'example.com'
+
+jf@Tzunami:~$ dig @192.168.56.210 server1.example.com
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> @192.168.56.210 server1.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5729
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;server1.example.com.       IN  A
+
+;; ANSWER SECTION:
+server1.example.com.    86400   IN  A   10.0.1.5
+
+;; AUTHORITY SECTION:
+example.com.        86400   IN  NS  ns2.example.com.
+example.com.        86400   IN  NS  ns1.example.com.
+
+;; ADDITIONAL SECTION:
+ns1.example.com.    86400   IN  A   192.168.56.210
+ns2.example.com.    86400   IN  A   192.168.56.210
+
+;; Query time: 1 msec
+;; SERVER: 192.168.56.210#53(192.168.56.210)
+;; WHEN: Sun May 28 21:54:48 CEST 2017
+;; MSG SIZE  rcvd: 132
+
 ```
