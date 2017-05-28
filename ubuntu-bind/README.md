@@ -9,7 +9,7 @@ remote: Total 17 (delta 2), reused 16 (delta 1), pack-reused 0
 Unpacking objects: 100% (17/17), done.
 Checking connectivity... done.
 
-jf@docker01:/home/jf# cd docker/ubuntu-bind ; ls
+jf@docker01:/home/jf$ cd docker/ubuntu-bind ; ls
 Dockerfile  README.md  config
 
 jf@docker01$:/home/jf/docker/ubuntu-bind$ docker build -t "bind:latest" .
