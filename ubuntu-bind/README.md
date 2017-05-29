@@ -12,7 +12,7 @@ Checking connectivity... done.
 jf@docker01:/home/jf$ cd docker/ubuntu-bind ; ls
 Dockerfile  README.md  config
 
-jf@docker01$:/home/jf/docker/ubuntu-bind$ docker build -t "bind:latest" .
+jf@docker01:/home/jf/docker/ubuntu-bind$ docker build -t "bind:latest" .
 Allot of build output...
 
 jf@docker01:/home/jf/docker/ubuntu-bind$ docker run -p 53:53/udp -p 53:53 --name bind bind:latest
