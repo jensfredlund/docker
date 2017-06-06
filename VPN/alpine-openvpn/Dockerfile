@@ -51,8 +51,5 @@ RUN mkdir -vp $OPENVPN_KEYS_DIR && \
 
 ADD files/server.conf /etc/openvpn
 
-###
-# Misc things to run OpenVPN
-###
 
 CMD ["/usr/sbin/openvpn", "--config", "/etc/openvpn/server.conf"]
