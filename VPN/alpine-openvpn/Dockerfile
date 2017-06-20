@@ -21,7 +21,6 @@ RUN apk add --update \
 ###
 # Create PKI for the OpenVPN server
 ###
-
 ADD files/easy_rsa.vars /root/easy-rsa/vars
 
 RUN cp -Rv /usr/share/easy-rsa /root/easy-rsa && \
