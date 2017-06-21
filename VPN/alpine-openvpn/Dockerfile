@@ -8,6 +8,7 @@ EXPOSE 1194/udp
 ###
 # Environment variables
 ###
+ENV PKI_PATH=/root
 ENV PKI_CN=server
 ENV DHPARAM_BITS=1024
 ENV OPENVPN_KEYS_DIR=/etc/openvpn/keys
@@ -23,7 +24,7 @@ RUN apk add --update \
 ###
 ADD files/easy_rsa.vars /root/easy-rsa/vars
 
-RUN cp -Rv /usr/share/easy-rsa /root/easy-rsa && \
+RUN cp -Rv /usr/share/easy-rsa $PKI_PATH && \
     cd /root/easy-rsa && \
     ./easyrsa init-pki && \
     echo "$PKI_CN" | ./easyrsa build-ca nopass && \
