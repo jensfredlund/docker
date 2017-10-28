@@ -1,4 +1,4 @@
-# Ubuntu container with a crontab
+# Ubuntu container with crontab
 
 ```
 jf@Tzunami:~/docker/cron$ make
